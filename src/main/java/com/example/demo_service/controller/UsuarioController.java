@@ -1,12 +1,21 @@
 package com.example.demo_service.controller;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.demo_service.model.entity.Usuario;
 import com.example.demo_service.service.UsuarioService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Controlador REST para gestionar Usuarios.
@@ -32,7 +41,7 @@ public class UsuarioController {
     }
 
     /**
-     * Endpoint para crear un usuario. 
+     * Endpoint para crear un usuario.
      * El servicio aplicará las validaciones de negocio.
      */
     @PostMapping
@@ -58,4 +67,6 @@ public class UsuarioController {
     public void eliminar(@PathVariable Long id) {
         usuarioService.eliminar(id);
     }
+
+    
 }
